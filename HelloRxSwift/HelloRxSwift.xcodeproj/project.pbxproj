@@ -29,6 +29,9 @@
 		9E1765EB2B013B8D000B2121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E1766012B013C17000B2121 /* HelloRxSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelloRxSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E1766022B013C72000B2121 /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E17661F2B02392B000B2121 /* Observers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observers.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E1766202B0239EA000B2121 /* Infallible.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Infallible.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E1766212B023C88000B2121 /* Disposables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Disposables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				9E1766022B013C72000B2121 /* Observable.playground */,
+				9E17661F2B02392B000B2121 /* Observers.playground */,
+				9E1766202B0239EA000B2121 /* Infallible.playground */,
+				9E1766212B023C88000B2121 /* Disposables.playground */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
