@@ -32,6 +32,8 @@
 		9E17661F2B02392B000B2121 /* Observers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observers.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E1766202B0239EA000B2121 /* Infallible.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Infallible.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E1766212B023C88000B2121 /* Disposables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Disposables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E1766232B023FDA000B2121 /* PublishSubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PublishSubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E1766242B024391000B2121 /* BehaviorSubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BehaviorSubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				9E1765F32B013BAF000B2121 /* Hello */,
 				9E1765F42B013BB8000B2121 /* Observable */,
+				9E1766222B023F9E000B2121 /* Subject */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -114,6 +117,15 @@
 				9E1766212B023C88000B2121 /* Disposables.playground */,
 			);
 			path = Observable;
+			sourceTree = "<group>";
+		};
+		9E1766222B023F9E000B2121 /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				9E1766232B023FDA000B2121 /* PublishSubject.playground */,
+				9E1766242B024391000B2121 /* BehaviorSubject.playground */,
+			);
+			path = Subject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
