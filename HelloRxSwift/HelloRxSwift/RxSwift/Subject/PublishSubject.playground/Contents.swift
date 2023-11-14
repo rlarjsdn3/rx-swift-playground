@@ -31,8 +31,10 @@ publishSubject
 
 publishSubject.onNext(30)
 
+//publishSubject.onError(MyError.error)
 publishSubject.onCompleted()
 // '완료' 이벤트를 방출하고 난 후, 새롭게 구독을 하게 되면 Completed 이벤트만 전달받고 끝남.
 publishSubject
     .subscribe { print("Subscribe 3 - ", $0) }
     .disposed(by: disposeBag)
+

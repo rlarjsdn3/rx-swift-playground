@@ -23,3 +23,6 @@ behaviorSubject
     .disposed(by: disposeBag)
 
 behaviorSubject.onNext(30)
+
+//behaviorSubject.onError(MyError.error)
+behaviorSubject.onCompleted()
