@@ -39,6 +39,13 @@
 		9E3753442B0391E00003DF02 /* empty.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = empty.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E3753452B0391F80003DF02 /* create.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = create.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E3753462B03920A0003DF02 /* error.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = error.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E3753482B03B7E80003DF02 /* ignoreElements.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ignoreElements.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E3753492B03B8D20003DF02 /* elementAt.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = elementAt.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E37534A2B03B9670003DF02 /* filter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = filter.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E37534B2B03BA170003DF02 /* skip.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = skip.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E37534C2B03BB270003DF02 /* skipWhile.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = skipWhile.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E37534D2B03BCEC0003DF02 /* SkipUntil.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SkipUntil.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E37534E2B03BEC70003DF02 /* skipDuration.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = skipDuration.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9EB07C1C2B037BD500E39198 /* ReplaySubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReplaySubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9EB07C1D2B037DC700E39198 /* AsyncSubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AsyncSubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9EB07C1E2B037FD300E39198 /* Relay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Relay.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -110,6 +117,7 @@
 				9E1765F42B013BB8000B2121 /* Observable */,
 				9E1766222B023F9E000B2121 /* Subject */,
 				9EB07C1F2B03830C00E39198 /* Creating Operators */,
+				9E3753472B03B7AB0003DF02 /* Filtering Operators */,
 			);
 			path = RxSwift;
 			sourceTree = "<group>";
@@ -143,6 +151,20 @@
 				9EB07C1E2B037FD300E39198 /* Relay.playground */,
 			);
 			path = Subject;
+			sourceTree = "<group>";
+		};
+		9E3753472B03B7AB0003DF02 /* Filtering Operators */ = {
+			isa = PBXGroup;
+			children = (
+				9E3753482B03B7E80003DF02 /* ignoreElements.playground */,
+				9E3753492B03B8D20003DF02 /* elementAt.playground */,
+				9E37534A2B03B9670003DF02 /* filter.playground */,
+				9E37534B2B03BA170003DF02 /* skip.playground */,
+				9E37534C2B03BB270003DF02 /* skipWhile.playground */,
+				9E37534D2B03BCEC0003DF02 /* SkipUntil.playground */,
+				9E37534E2B03BEC70003DF02 /* skipDuration.playground */,
+			);
+			path = "Filtering Operators";
 			sourceTree = "<group>";
 		};
 		9EB07C1F2B03830C00E39198 /* Creating Operators */ = {
