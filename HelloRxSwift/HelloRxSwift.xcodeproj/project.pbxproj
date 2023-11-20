@@ -88,6 +88,10 @@
 		9EC8BFBD2B0663A9003FD50D /* buffer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = buffer.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9EC8BFBE2B0664DB003FD50D /* window.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = window.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9EC8BFBF2B066773003FD50D /* groupBy.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = groupBy.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9EE7FFF52B0AF4FC00E51E36 /* multicast.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = multicast.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9EE7FFF62B0AFBA600E51E36 /* publish.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = publish.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9EE7FFF72B0AFD2200E51E36 /* refCount.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = refCount.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9EE7FFF82B0AFFD000E51E36 /* share.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = share.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 				9E3B5E2A2B08687500A49C95 /* Combining Operators */,
 				9E3B5E342B08D09800A49C95 /* Conditional Operators */,
 				9E1765F22B013B9C000B2121 /* TimeBased Operators */,
+				9EE7FFF42B0AF29B00E51E36 /* Sharing Subscription */,
 				9E1765F12B013B95000B2121 /* RxCocoa */,
 				9E1765E62B013B8D000B2121 /* Assets.xcassets */,
 				9E1765E82B013B8D000B2121 /* LaunchScreen.storyboard */,
@@ -274,6 +279,17 @@
 				9E3753462B03920A0003DF02 /* error.playground */,
 			);
 			path = "Creating Operators";
+			sourceTree = "<group>";
+		};
+		9EE7FFF42B0AF29B00E51E36 /* Sharing Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				9EE7FFF52B0AF4FC00E51E36 /* multicast.playground */,
+				9EE7FFF62B0AFBA600E51E36 /* publish.playground */,
+				9EE7FFF72B0AFD2200E51E36 /* refCount.playground */,
+				9EE7FFF82B0AFFD000E51E36 /* share.playground */,
+			);
+			path = "Sharing Subscription";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
