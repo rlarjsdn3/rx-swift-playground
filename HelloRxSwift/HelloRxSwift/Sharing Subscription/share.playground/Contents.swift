@@ -3,7 +3,7 @@ import RxSwift
 
 //: share
 
-let bag = DisposeBag()
+let disposeBag = DisposeBag()
 
 // 앞서 배운 모든 공유 연산자를 합친 연산자임.
 let source = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)

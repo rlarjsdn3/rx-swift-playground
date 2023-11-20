@@ -1017,6 +1017,48 @@
 			<key>orderHint</key>
 			<integer>28</integer>
 		</dict>
+		<key>catch (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>81</integer>
+		</dict>
+		<key>catch (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>82</integer>
+		</dict>
+		<key>catch (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>80</integer>
+		</dict>
+		<key>catchAndReturn  (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>84</integer>
+		</dict>
+		<key>catchAndReturn  (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>85</integer>
+		</dict>
+		<key>catchAndReturn  (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>83</integer>
+		</dict>
 		<key>combineLatest (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -2998,6 +3040,48 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
+		<key>retry (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>87</integer>
+		</dict>
+		<key>retry (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>88</integer>
+		</dict>
+		<key>retry (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>86</integer>
+		</dict>
+		<key>retryWhen (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>90</integer>
+		</dict>
+		<key>retryWhen (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>91</integer>
+		</dict>
+		<key>retryWhen (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>89</integer>
+		</dict>
 		<key>sample (Playground) 1.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -3137,6 +3221,27 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>12</integer>
+		</dict>
+		<key>schedular (Playground) 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>78</integer>
+		</dict>
+		<key>schedular (Playground) 2.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>79</integer>
+		</dict>
+		<key>schedular (Playground).xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>77</integer>
 		</dict>
 		<key>share (Playground) 1.xcscheme</key>
 		<dict>
