@@ -14,12 +14,14 @@ final class TableViewModel: ViewModelType {
     
     struct Input {
         let plusTapped: Observable<Void>
+        let itemTapped: Observable<(IndexPath, Product)>
         let swipeToDelete: Observable<IndexPath>
         let dragToMove: Observable<ItemMovedEvent>
     }
     
     struct Output {
         let productsData: Observable<[Product]>
+        let selectedItem: Observable<IndexPath>
     }
     
     let disposeBag: DisposeBag = DisposeBag()
@@ -34,6 +36,9 @@ final class TableViewModel: ViewModelType {
             }
             .disposed(by: disposeBag)
         
+        let selectedItem = input.itemTapped
+            .map { return $0.0 }
+        
         input.swipeToDelete
             .withUnretained(self)
             .subscribe { $0.0.deleteTableRow(at: $0.1) }
@@ -44,7 +49,7 @@ final class TableViewModel: ViewModelType {
             .subscribe { $0.0.moveTableRow(source: $0.1.sourceIndex, destination: $0.1.destinationIndex) }
             .disposed(by: disposeBag)
         
-        return Output(productsData: products.asObservable())
+        return Output(productsData: products.asObservable(), selectedItem: selectedItem)
     }
     
     func deleteTableRow(at indexPath: IndexPath) {

@@ -98,6 +98,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Smp-Ec-fHP" kind="show" id="Jxe-AI-BP9"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Cxk-8E-kKK" style="IBUITableViewCellStyleDefault" id="LBK-UG-IeR">
                                         <rect key="frame" x="0.0" y="306.66667175292969" width="393" height="44.666667938232422"/>
@@ -266,6 +269,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWK-BG-Ph9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1461" y="-154"/>
+        </scene>
+        <!--CollectionView-->
+        <scene sceneID="460-Ch-WAf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CollectionView" id="Smp-Ec-fHP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PVO-VJ-QUg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0eV-PI-Ybw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="-120"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y5q-VK-v5s">

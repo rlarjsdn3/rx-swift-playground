@@ -38,6 +38,7 @@ class TableViewViewController: UIViewController {
     func bindViewModel() {
         let input = TableViewModel.Input(
             plusTapped: addButton.rx.tap.asObservable(),
+            itemTapped: Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Product.self)),
             swipeToDelete: tableView.rx.itemDeleted.asObservable(),
             dragToMove: tableView.rx.itemMoved.asObservable())
         let output = viewModel.transform(input: input)
@@ -52,17 +53,24 @@ class TableViewViewController: UIViewController {
                 cell.priceLabel.text = self?.priceFormatter.string(for: element.price)
             }
             .disposed(by: disposeBag)
+        
+        output.selectedItem
+            .withUnretained(self)
+            .subscribe { // 굳이 이렇게 할 필요가 없는 간단한 로직이나, 연습을 위해 이렇게 구현함.
+                $0.0.tableView.deselectRow(at: $0.1, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     func bindTableView() {
         // zip 연산자를 활용해 선택한 셀의 제품 정보와 인덱스 패스를 동시에 방출하도록 함.
-        Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Product.self))
-            .subscribe { [weak self] indexPath, product in
-                print("- 선택한 셀의 제품 정보: \(product)")
-                self?.tableView.deselectRow(at: indexPath, animated: true)
-            }
-            .disposed(by: disposeBag)
-        
+//        Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Product.self))
+//            .subscribe { [weak self] indexPath, product in
+//                print("- 선택한 셀의 제품 정보: \(product)")
+//                self?.tableView.deselectRow(at: indexPath, animated: true)
+//            }
+//            .disposed(by: disposeBag)
+//        
         // 선택한 셀의 IndexPath가 담긴 Next 이벤트를 방출함.
 //        tableView.rx.itemSelected
 //            .subscribe { element in
