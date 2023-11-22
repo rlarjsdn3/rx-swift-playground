@@ -6,24 +6,31 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class GestureViewController: UIViewController {
-
+    
+    @IBOutlet weak var targetView: UIView!
+    @IBOutlet var panGesture: UIPanGestureRecognizer!
+    
+    let disposeBag: DisposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        targetView.center = view.center
+        
+        panGesture.rx.event
+            .subscribe { [unowned self] gesture in
+                guard let target = gesture.view else { return }
+                let translation = gesture.translation(in: self.view)
+                target.center.x = translation.x
+                target.center.y = translation.y
+                
+                gesture.setTranslation(.zero, in: self.view)
+            }
+            .disposed(by: disposeBag)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -118,6 +118,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jIS-Ob-zT9" kind="show" id="546-u8-xUV"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="X4B-kh-h6P" style="IBUITableViewCellStyleDefault" id="COk-ib-8XP">
                                         <rect key="frame" x="0.0" y="351.33333969116211" width="393" height="44.666667938232422"/>
@@ -135,6 +138,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Z8f-iJ-fHo" kind="show" id="aMz-BV-HDt"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Fje-gb-XvT" style="IBUITableViewCellStyleDefault" id="qzP-RH-wB9">
                                         <rect key="frame" x="0.0" y="396.00000762939453" width="393" height="44.666667938232422"/>
@@ -152,6 +158,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="56L-AT-hS8" kind="show" id="adL-Ka-h1U"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -279,6 +288,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0eV-PI-Ybw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1481" y="-120"/>
+        </scene>
+        <!--AlertController-->
+        <scene sceneID="gny-m9-B0c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AlertController" id="jIS-Ob-zT9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Wge-Nv-iDF"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a17-k3-BGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1482" y="-86"/>
+        </scene>
+        <!--NotificationCenter-->
+        <scene sceneID="kxW-UQ-osR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NotificationCenter" referencedIdentifier="NotificationCenter" id="Z8f-iJ-fHo" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="w6n-9a-Uae"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LTe-Wy-bSG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1498" y="-51"/>
+        </scene>
+        <!--Gesture-->
+        <scene sceneID="3Kd-4i-006">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Gesture" id="56L-AT-hS8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="wNT-6F-yQL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4f-YQ-1ok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="-16"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y5q-VK-v5s">
