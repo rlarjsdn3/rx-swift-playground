@@ -41,6 +41,13 @@
 		9E8D92D62B0CC2CE007955FE /* CustomControlEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92D52B0CC2CE007955FE /* CustomControlEventViewController.swift */; };
 		9E8D92D82B0CC2D7007955FE /* CustomControlPropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92D72B0CC2D7007955FE /* CustomControlPropertyViewController.swift */; };
 		9E8D92DA2B0CC2DD007955FE /* DelegateProxyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92D92B0CC2DD007955FE /* DelegateProxyViewController.swift */; };
+		9ED2C9642B144E6A008E01F9 /* RxTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2C9632B144E6A008E01F9 /* RxTableViewController.swift */; };
+		9ED2C9662B144E6F008E01F9 /* RxCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2C9652B144E6F008E01F9 /* RxCollectionViewController.swift */; };
+		9ED2C9682B144E73008E01F9 /* RxTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED2C9672B144E73008E01F9 /* RxTableView.storyboard */; };
+		9ED2C96A2B144E78008E01F9 /* RxCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED2C9692B144E78008E01F9 /* RxCollectionView.storyboard */; };
+		9ED2C96E2B1454B1008E01F9 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED2C96D2B1454B1008E01F9 /* Differentiator */; };
+		9ED2C9702B1454B1008E01F9 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 9ED2C96F2B1454B1008E01F9 /* RxDataSources */; };
+		9ED2C9722B14553D008E01F9 /* TodoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2C9712B14553D008E01F9 /* TodoData.swift */; };
 		9ED38D742B0CCBD90067AA14 /* TraitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED38D732B0CCBD90067AA14 /* TraitsViewModel.swift */; };
 		9ED38D762B0CD6C50067AA14 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED38D752B0CD6C50067AA14 /* Product.swift */; };
 		9ED38D782B0CD6D40067AA14 /* MaterialColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED38D772B0CD6D40067AA14 /* MaterialColor.swift */; };
@@ -144,6 +151,11 @@
 		9EC8BFBD2B0663A9003FD50D /* buffer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = buffer.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9EC8BFBE2B0664DB003FD50D /* window.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = window.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9EC8BFBF2B066773003FD50D /* groupBy.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = groupBy.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9ED2C9632B144E6A008E01F9 /* RxTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewController.swift; sourceTree = "<group>"; };
+		9ED2C9652B144E6F008E01F9 /* RxCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCollectionViewController.swift; sourceTree = "<group>"; };
+		9ED2C9672B144E73008E01F9 /* RxTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxTableView.storyboard; sourceTree = "<group>"; };
+		9ED2C9692B144E78008E01F9 /* RxCollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RxCollectionView.storyboard; sourceTree = "<group>"; };
+		9ED2C9712B14553D008E01F9 /* TodoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoData.swift; sourceTree = "<group>"; };
 		9ED38D732B0CCBD90067AA14 /* TraitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitsViewModel.swift; sourceTree = "<group>"; };
 		9ED38D752B0CD6C50067AA14 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9ED38D772B0CD6D40067AA14 /* MaterialColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColor.swift; sourceTree = "<group>"; };
@@ -172,6 +184,8 @@
 				9E1765FE2B013BDA000B2121 /* RxCocoa-Dynamic in Frameworks */,
 				9E1765FC2B013BDA000B2121 /* RxCocoa in Frameworks */,
 				9E1765F82B013BDA000B2121 /* RxBlocking in Frameworks */,
+				9ED2C9702B1454B1008E01F9 /* RxDataSources in Frameworks */,
+				9ED2C96E2B1454B1008E01F9 /* Differentiator in Frameworks */,
 				9E1765FA2B013BDA000B2121 /* RxBlocking-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,6 +242,7 @@
 				9E8D92DD2B0CC343007955FE /* Basic */,
 				9E8D92DC2B0CC331007955FE /* ViewController */,
 				9E8D92DB2B0CC321007955FE /* Custom */,
+				9ED2C9602B144D25008E01F9 /* RxDatasource */,
 			);
 			path = RxCocoa;
 			sourceTree = "<group>";
@@ -512,6 +527,34 @@
 			path = "Creating Operators";
 			sourceTree = "<group>";
 		};
+		9ED2C9602B144D25008E01F9 /* RxDatasource */ = {
+			isa = PBXGroup;
+			children = (
+				9ED2C9622B144DF3008E01F9 /* TableView */,
+				9ED2C9612B144DED008E01F9 /* CollectionView */,
+			);
+			path = RxDatasource;
+			sourceTree = "<group>";
+		};
+		9ED2C9612B144DED008E01F9 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9ED2C9692B144E78008E01F9 /* RxCollectionView.storyboard */,
+				9ED2C9652B144E6F008E01F9 /* RxCollectionViewController.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		9ED2C9622B144DF3008E01F9 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				9ED2C9712B14553D008E01F9 /* TodoData.swift */,
+				9ED2C9672B144E73008E01F9 /* RxTableView.storyboard */,
+				9ED2C9632B144E6A008E01F9 /* RxTableViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		9EE7FFF42B0AF29B00E51E36 /* Sharing Subscription */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +607,8 @@
 				9E1765FB2B013BDA000B2121 /* RxCocoa */,
 				9E1765FD2B013BDA000B2121 /* RxCocoa-Dynamic */,
 				9E1765FF2B013BDA000B2121 /* RxRelay */,
+				9ED2C96D2B1454B1008E01F9 /* Differentiator */,
+				9ED2C96F2B1454B1008E01F9 /* RxDataSources */,
 			);
 			productName = HelloRxSwift;
 			productReference = 9E1765DA2B013B8C000B2121 /* HelloRxSwift.app */;
@@ -595,6 +640,7 @@
 			mainGroup = 9E1765D12B013B8C000B2121;
 			packageReferences = (
 				9E1765F62B013BDA000B2121 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				9ED2C96C2B1454B1008E01F9 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 9E1765DB2B013B8C000B2121 /* Products */;
 			projectDirPath = "";
@@ -616,6 +662,7 @@
 				9E8D92A42B0CC209007955FE /* Binding.storyboard in Resources */,
 				9E8D92B82B0CC23A007955FE /* CustomBinding.storyboard in Resources */,
 				9E8D92A62B0CC20D007955FE /* Traits.storyboard in Resources */,
+				9ED2C96A2B144E78008E01F9 /* RxCollectionView.storyboard in Resources */,
 				9E8D92AE2B0CC21F007955FE /* TableView.storyboard in Resources */,
 				9E1765EA2B013B8D000B2121 /* LaunchScreen.storyboard in Resources */,
 				9E1765E72B013B8D000B2121 /* Assets.xcassets in Resources */,
@@ -624,6 +671,7 @@
 				9E8D92AC2B0CC21B007955FE /* Signal.storyboard in Resources */,
 				9E8D92BA2B0CC241007955FE /* CustomControlEvent.storyboard in Resources */,
 				9E1765E52B013B8C000B2121 /* Main.storyboard in Resources */,
+				9ED2C9682B144E73008E01F9 /* RxTableView.storyboard in Resources */,
 				9E8D92B62B0CC232007955FE /* Gesture.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,15 +685,18 @@
 			files = (
 				9E8D92D02B0CC2BD007955FE /* NotificationCenterViewController.swift in Sources */,
 				9E8D92DA2B0CC2DD007955FE /* DelegateProxyViewController.swift in Sources */,
+				9ED2C9642B144E6A008E01F9 /* RxTableViewController.swift in Sources */,
 				9ED38D782B0CD6D40067AA14 /* MaterialColor.swift in Sources */,
 				9E8D92D22B0CC2C2007955FE /* GestureViewController.swift in Sources */,
 				9E8D92C02B0CC291007955FE /* BindingViewController.swift in Sources */,
 				9ED38D822B0D92860067AA14 /* AlertViewModel.swift in Sources */,
 				9E8D92CA2B0CC2AE007955FE /* TableViewViewController.swift in Sources */,
+				9ED2C9662B144E6F008E01F9 /* RxCollectionViewController.swift in Sources */,
 				9ED38D762B0CD6C50067AA14 /* Product.swift in Sources */,
 				9E8D92D82B0CC2D7007955FE /* CustomControlPropertyViewController.swift in Sources */,
 				9E8D92D62B0CC2CE007955FE /* CustomControlEventViewController.swift in Sources */,
 				9ED38D802B0CFB7E0067AA14 /* CollectionViewModel.swift in Sources */,
+				9ED2C9722B14553D008E01F9 /* TodoData.swift in Sources */,
 				9E8D92D42B0CC2C7007955FE /* CustomBindingViewController.swift in Sources */,
 				9ED38D7E2B0CF8D00067AA14 /* ColorCollectionViewCell.swift in Sources */,
 				9E8D92C82B0CC2A8007955FE /* SignalViewController.swift in Sources */,
@@ -889,6 +940,14 @@
 				minimumVersion = 6.6.0;
 			};
 		};
+		9ED2C96C2B1454B1008E01F9 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -916,6 +975,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9E1765F62B013BDA000B2121 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
+		};
+		9ED2C96D2B1454B1008E01F9 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9ED2C96C2B1454B1008E01F9 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		9ED2C96F2B1454B1008E01F9 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9ED2C96C2B1454B1008E01F9 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
