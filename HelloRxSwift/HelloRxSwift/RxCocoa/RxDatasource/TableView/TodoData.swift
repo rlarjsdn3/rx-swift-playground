@@ -24,7 +24,7 @@ extension TodoData: IdentifiableType, Equatable {
 
 struct SectionOfTodoData {
     var header: String
-    var items: [Item] = []
+    var items: [Item] = [] // 이게 섹션 속 아이템임! 
 }
 
 extension SectionOfTodoData: AnimatableSectionModelType {
