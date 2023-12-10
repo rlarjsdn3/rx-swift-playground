@@ -6,24 +6,65 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
+import RxSwift
+import RxCocoa
 
 class DelegateProxyViewController: UIViewController {
-
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let disposeBag: DisposeBag = DisposeBag()
+    let locationManager: CLLocationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        locationManager.rx.didUpdateLocations
+            .map { $0[0] }
+            .bind(to: mapView.rx.center)
+            .disposed(by: disposeBag)
+    }
 
-        // Do any additional setup after loading the view.
+}
+
+extension Reactive where Base: MKMapView {
+    var center: Binder<CLLocation> {
+        return Binder(base.self) { mapView, location in
+            let region = MKCoordinateRegion(
+                center: location.coordinate,
+                latitudinalMeters: 10_000,
+                longitudinalMeters: 10_000
+            )
+            self.base.setRegion(region, animated: true)
+        }
+    }
+}
+
+extension CLLocationManager: HasDelegate {
+    public typealias Delegate = CLLocationManagerDelegate
+}
+
+class RxCLLocationManagerDelegateProxy: DelegateProxy<CLLocationManager, CLLocationManagerDelegate>, DelegateProxyType, CLLocationManagerDelegate {
+    static func registerKnownImplementations() {
+        self.register {
+            RxCLLocationManagerDelegateProxy(parentObject: $0, delegateProxy: self)
+        }
+    }
+}
+
+
+extension Reactive where Base: CLLocationManager {
+    var delegate: DelegateProxy<CLLocationManager, CLLocationManagerDelegate> {
+        return RxCLLocationManagerDelegateProxy.proxy(for: self.base)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    var didUpdateLocations: Observable<[CLLocation]> {
+        return delegate.methodInvoked(#selector(CLLocationManagerDelegate.locationManager(_:didUpdateLocations:)))
+            .map { $0[1] as! [CLLocation] }
     }
-    */
-
 }

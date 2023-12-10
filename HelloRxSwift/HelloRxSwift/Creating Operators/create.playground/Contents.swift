@@ -9,7 +9,7 @@ enum MyError: Error {
     case error
 }
 
-// 옵저버블을 동작을 직접 구현함.
+//// 옵저버블을 동작을 직접 구현함.
 Observable<String>.create { observer -> Disposable in
     guard let url = URL(string: "https://www.apple.com") else {
         observer.onError(MyError.error)
