@@ -61,6 +61,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E097F562BC0D4C500D4BD67 /* Single.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Single.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E097F572BC0E89300D4BD67 /* Completable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Completable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E097F582BC0ECA400D4BD67 /* Maybe.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Maybe.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E1765DA2B013B8C000B2121 /* HelloRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1765DD2B013B8C000B2121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E1765DF2B013B8C000B2121 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +200,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E097F542BC0D49100D4BD67 /* Traits */ = {
+			isa = PBXGroup;
+			children = (
+				9E097F562BC0D4C500D4BD67 /* Single.playground */,
+				9E097F572BC0E89300D4BD67 /* Completable.playground */,
+				9E097F582BC0ECA400D4BD67 /* Maybe.playground */,
+			);
+			path = Traits;
+			sourceTree = "<group>";
+		};
+		9E097F552BC0D49D00D4BD67 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				9EB07C1F2B03830C00E39198 /* Creating Operators */,
+				9E3753472B03B7AB0003DF02 /* Filtering Operators */,
+				9E76607F2B06546900E4C8B5 /* Transforming Operators */,
+				9E3B5E2A2B08687500A49C95 /* Combining Operators */,
+				9E3B5E342B08D09800A49C95 /* Conditional Operators */,
+				9E1765F22B013B9C000B2121 /* TimeBased Operators */,
+				9EE7FFF42B0AF29B00E51E36 /* Sharing Subscription */,
+			);
+			path = Operators;
+			sourceTree = "<group>";
+		};
 		9E1765D12B013B8C000B2121 = {
 			isa = PBXGroup;
 			children = (
@@ -216,17 +243,11 @@
 		9E1765DC2B013B8C000B2121 /* HelloRxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				9E8D92922B0CBFFA007955FE /* Model */,
-				9E1765F32B013BAF000B2121 /* Hello */,
+				9E097F552BC0D49D00D4BD67 /* Operators */,
+				9E097F542BC0D49100D4BD67 /* Traits */,
+				9E1765F32B013BAF000B2121 /* Basic */,
 				9E1765F42B013BB8000B2121 /* Observable */,
 				9E1766222B023F9E000B2121 /* Subject */,
-				9EB07C1F2B03830C00E39198 /* Creating Operators */,
-				9E3753472B03B7AB0003DF02 /* Filtering Operators */,
-				9E76607F2B06546900E4C8B5 /* Transforming Operators */,
-				9E3B5E2A2B08687500A49C95 /* Combining Operators */,
-				9E3B5E342B08D09800A49C95 /* Conditional Operators */,
-				9E1765F22B013B9C000B2121 /* TimeBased Operators */,
-				9EE7FFF42B0AF29B00E51E36 /* Sharing Subscription */,
 				9EE7FFF92B0B01A900E51E36 /* Schedular */,
 				9EE7FFFB2B0B125D00E51E36 /* Error Handling */,
 				9E1765F12B013B95000B2121 /* RxCocoa */,
@@ -242,6 +263,7 @@
 		9E1765F12B013B95000B2121 /* RxCocoa */ = {
 			isa = PBXGroup;
 			children = (
+				9E8D92922B0CBFFA007955FE /* Model */,
 				9E1765E32B013B8C000B2121 /* Main.storyboard */,
 				9E8D92DD2B0CC343007955FE /* Basic */,
 				9E8D92DC2B0CC331007955FE /* ViewController */,
@@ -262,12 +284,12 @@
 			path = "TimeBased Operators";
 			sourceTree = "<group>";
 		};
-		9E1765F32B013BAF000B2121 /* Hello */ = {
+		9E1765F32B013BAF000B2121 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
 				9E1766012B013C17000B2121 /* HelloRxSwift.playground */,
 			);
-			path = Hello;
+			path = Basic;
 			sourceTree = "<group>";
 		};
 		9E1765F42B013BB8000B2121 /* Observable */ = {
