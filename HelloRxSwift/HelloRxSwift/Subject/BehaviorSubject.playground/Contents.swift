@@ -2,6 +2,8 @@ import UIKit
 import RxSwift
 
 //: # Behavior Subject
+//: `BehaviorSubject`는 가장 최근에 방출한 항목을 새로운 `Observer`에게 방출하는 `Subject`입니다.
+
 
 let disposeBag = DisposeBag()
 
@@ -9,20 +11,19 @@ enum MyError: Error {
     case error
 }
 
-// Behavior Subject는 최근 이벤트와 함께 새로운 구독자에게 이벤트를 방출하는 서브젝트임.
-let behaviorSubject = BehaviorSubject<Int>(value: 10)
+let subject = BehaviorSubject<Int>(value: 1)
 
-behaviorSubject
-    .subscribe { print("Subscribe 1 - ", $0) }
+subject
+    .subscribe { print("S1 - Element: \($0)") }
     .disposed(by: disposeBag)
 
-behaviorSubject.onNext(20)
+subject.onNext(2)
 
-behaviorSubject
-    .subscribe { print("Subscribe 2 - ", $0) }
+subject
+    .subscribe { print("S2 - Element: \($0)") }
     .disposed(by: disposeBag)
 
-behaviorSubject.onNext(30)
+subject.onNext(3)
+subject.onNext(4)
 
-//behaviorSubject.onError(MyError.error)
-behaviorSubject.onCompleted()
+subject.onCompleted()

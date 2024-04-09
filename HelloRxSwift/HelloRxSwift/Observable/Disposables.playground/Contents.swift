@@ -2,27 +2,20 @@ import UIKit
 import RxSwift
 
 //: # Disposables
+//: `Observable`은 모든 항목을 방출해 쓸모가 없어지면 해제를 해야 합니다. `Disposables`로 `Observable`을 해제하지 않으면 `Observable`이 사라지지 않아 메모리 누수가 발생할 위험이 있습니다. `dispose` 메서드를 호출하는 것보다 `DisposeBag`을 사용하는 게 더 효율적입니다. `DisposeBag`은 뷰가 사라질 때, 연관된 `Observable`을 메모리에서 해제합니다.
 
 let disposeBag = DisposeBag()
 
-let observable = Observable.from([1, 2, 3])
-    .subscribe { value in
-        print("Subscribe - ", value)
-    } onError: { error in
-        print("Error - ", error)
-    } onCompleted: {
-        print("Completed")
-    } onDisposed: {
-        // 구독이 해제된 후 호출됨.
-        // (이 클로저에서 옵져버블이 메모리에서 해제되는 건 아님!)
-        print("Disposed")
+let observable = Observable<Int>.of(1, 2, 3)
+    .subscribe { event in
+        switch event {
+        case let .next(element):
+            print("Element: \(element)")
+        case .error:
+            print("Error")
+        case .completed:
+            print("Completed")
+        }
     }
 
-// dispose를 직접 호출하는 것보다 DisposeBag을 사용하는 게 더 좋음.
-// observable.dispose()
 observable.disposed(by: disposeBag)
-// disposedBag이라는 가방을 만들어서 뷰가 사라질 때, 한 번에 메모리에서 해제되도록 함.
-
-// dispose를 사용하지 않으면 등록해 놓은 옵져버블이 사라지지 않아 메모리 누수가 발생함.
-
-// 또한, dispose는 방출 중인 옵져버블을 멈추는 역할도 함.

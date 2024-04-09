@@ -1,24 +1,19 @@
 import UIKit
 import RxSwift
 
-//: # ReplaySubject
+//: # AsyncSubject
+//: `AsyncSubject`는 `Completed` 항목을 방출하는 시점에 가장 최근에 방출한 항목을 `Observer`에게 방출하는 `Subject`입니다.
 
 let disposeBag = DisposeBag()
 
-enum MyError: Error {
-    case error
-}
+let subject = AsyncSubject<Int>()
 
-// Async Subject는 Compeleted 이벤트가 전달되는 시점에 가장 최근 이벤트를 구독자에게 방출함.
-let asyncSubject = AsyncSubject<Int>()
-
-asyncSubject
-    .subscribe { print("Subscribe 1 - ", $0) }
+subject
+    .subscribe { print("Element: \($0)") }
     .disposed(by: disposeBag)
 
-asyncSubject.onNext(10)
-asyncSubject.onNext(20)
-asyncSubject.onNext(30)
+subject.onNext(1)
+subject.onNext(2)
+subject.onNext(3)
 
-// Completed 이벤트가 전달되는 시점에 최근 이벤트를 구독자에게 방출함.
-asyncSubject.onCompleted()
+subject.onCompleted()

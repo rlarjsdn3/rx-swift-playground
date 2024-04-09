@@ -2,23 +2,29 @@ import UIKit
 import RxSwift
 
 //: # Observable
+//: `Observable`은 하나 또는 그 이상의 `Observer`에게 시간의 흐름에 따라 항목을 방출할 수 있습니다. `Observable`은 `next`, `error`와 `completed` 항목을 방출할 수 있으며, 이 중 `error`와 `completed` 항목을 방출하면 스트림이 중단됩니다.
 
 let disposeBag = DisposeBag()
 
-// 이벤트를 차례로 방출하는 Observable 시퀀스 생성
-let observable = Observable<Int>.create { observer -> Disposable in
-    // '10'이라는 이벤트 방출
+enum MyError: Error {
+    case error
+}
+
+let observable = Observable<Int>.create { observer in
+    // next 항목 방출
     observer.on(.next(10))
-    // '20'이라는 이벤트 방출
     observer.onNext(20)
     
-    // 모든 이벤트를 전달했다는 '완료' 이벤트 방출
+    // error 항목 방출
+//    observer.onError(MyError.error)
+    
+    // compledted 항목 방출
     observer.onCompleted()
-    // Observable과 관련된 리소스를 모두 해제
+    
+    // Observable의 리소스 해제
     return Disposables.create()
 }
 
-// 옵져버블 시퀀스를 구독해 차례대로 이벤트를 받아 처리
 observable
     .subscribe { print($0) }
     .disposed(by: disposeBag)

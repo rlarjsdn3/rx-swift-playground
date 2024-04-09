@@ -2,27 +2,22 @@ import UIKit
 import RxSwift
 
 //: # ReplaySubject
+//: `ReplaySubject`는 버퍼 수만큼 방출한 항목을 저장해놓고, 새로운 `Observer`에게 버퍼에 저장된 항목을 방출하는 `Subject`입니다.
 
 let disposeBag = DisposeBag()
 
-enum MyError: Error {
-    case error
-}
+let subject = ReplaySubject<Int>.create(bufferSize: 3)
 
-// Replay Subject는 지정된 수 만큼 방출된 이벤트를 (후입선출) 버퍼에 저장해놓고, 새로운 구독자에게 버퍼에 저장된 이벤트를 방출함.
-let replaySubject = ReplaySubject<Int>.create(bufferSize: 3)
+(1...10).forEach { subject.onNext($0) }
 
-(1...10).forEach { replaySubject.onNext($0) }
-
-replaySubject
-    .subscribe { print("Subscribe 1 - ", $0) }
+subject
+    .subscribe { print("S1 - Element: \($0)") }
     .disposed(by: disposeBag)
 
-replaySubject.onNext(11) // 새로운 이벤트를 방출하면 마지막으로 추가된 이벤트가 버퍼에서 제거되고, 새로운 이벤트가 버퍼에 추가됨
+subject.onNext(11)
 
-replaySubject
-    .subscribe { print("Subscribe 2 - ", $0) }
+subject
+    .subscribe { print("S2 - Element: \($0)") }
     .disposed(by: disposeBag)
 
-//replaySubject.onError(MyError.error)
-replaySubject.onCompleted()
+subject.onCompleted()

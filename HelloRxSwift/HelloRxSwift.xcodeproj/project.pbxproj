@@ -19,7 +19,6 @@
 		9E1766002B013BDA000B2121 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 9E1765FF2B013BDA000B2121 /* RxRelay */; };
 		9E8D92A42B0CC209007955FE /* Binding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8D92A32B0CC209007955FE /* Binding.storyboard */; };
 		9E8D92A62B0CC20D007955FE /* Traits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8D92A52B0CC20D007955FE /* Traits.storyboard */; };
-		9E8D92AC2B0CC21B007955FE /* Signal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8D92AB2B0CC21B007955FE /* Signal.storyboard */; };
 		9E8D92AE2B0CC21F007955FE /* TableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8D92AD2B0CC21F007955FE /* TableView.storyboard */; };
 		9E8D92B02B0CC223007955FE /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8D92AF2B0CC223007955FE /* CollectionView.storyboard */; };
 		9E8D92B22B0CC228007955FE /* AlertController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8D92B12B0CC228007955FE /* AlertController.storyboard */; };
@@ -31,7 +30,6 @@
 		9E8D92BE2B0CC24C007955FE /* DelegateProxy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E8D92BD2B0CC24C007955FE /* DelegateProxy.storyboard */; };
 		9E8D92C02B0CC291007955FE /* BindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92BF2B0CC291007955FE /* BindingViewController.swift */; };
 		9E8D92C22B0CC298007955FE /* TraitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92C12B0CC298007955FE /* TraitsViewController.swift */; };
-		9E8D92C82B0CC2A8007955FE /* SignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92C72B0CC2A8007955FE /* SignalViewController.swift */; };
 		9E8D92CA2B0CC2AE007955FE /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92C92B0CC2AE007955FE /* TableViewViewController.swift */; };
 		9E8D92CC2B0CC2B3007955FE /* CollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92CB2B0CC2B3007955FE /* CollectionViewViewController.swift */; };
 		9E8D92CE2B0CC2B7007955FE /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8D92CD2B0CC2B7007955FE /* AlertViewController.swift */; };
@@ -73,7 +71,7 @@
 		9E1765EB2B013B8D000B2121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E1766012B013C17000B2121 /* HelloRxSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelloRxSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E1766022B013C72000B2121 /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		9E17661F2B02392B000B2121 /* Observers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observers.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E17661F2B02392B000B2121 /* Observer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observer.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E1766202B0239EA000B2121 /* Infallible.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Infallible.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E1766212B023C88000B2121 /* Disposables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Disposables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E1766232B023FDA000B2121 /* PublishSubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PublishSubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -104,6 +102,7 @@
 		9E3B5E372B08D48000A49C95 /* timer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = timer.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E3B5E382B08D69900A49C95 /* timeout.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = timeout.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E3B5E392B08D9A400A49C95 /* delay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = delay.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E74094D2BC5281900A0AF3A /* Operator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Operator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E7660762B06433E00E4C8B5 /* take.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = take.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E7660772B0643CB00E4C8B5 /* takeWhile.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = takeWhile.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E7660782B06453F00E4C8B5 /* takeUntil.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = takeUntil.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -117,7 +116,6 @@
 		9E7660812B0656F300E4C8B5 /* map.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = map.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E8D92A32B0CC209007955FE /* Binding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Binding.storyboard; sourceTree = "<group>"; };
 		9E8D92A52B0CC20D007955FE /* Traits.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Traits.storyboard; sourceTree = "<group>"; };
-		9E8D92AB2B0CC21B007955FE /* Signal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signal.storyboard; sourceTree = "<group>"; };
 		9E8D92AD2B0CC21F007955FE /* TableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableView.storyboard; sourceTree = "<group>"; };
 		9E8D92AF2B0CC223007955FE /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		9E8D92B12B0CC228007955FE /* AlertController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertController.storyboard; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		9E8D92BD2B0CC24C007955FE /* DelegateProxy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DelegateProxy.storyboard; sourceTree = "<group>"; };
 		9E8D92BF2B0CC291007955FE /* BindingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingViewController.swift; sourceTree = "<group>"; };
 		9E8D92C12B0CC298007955FE /* TraitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitsViewController.swift; sourceTree = "<group>"; };
-		9E8D92C72B0CC2A8007955FE /* SignalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalViewController.swift; sourceTree = "<group>"; };
 		9E8D92C92B0CC2AE007955FE /* TableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewController.swift; sourceTree = "<group>"; };
 		9E8D92CB2B0CC2B3007955FE /* CollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewViewController.swift; sourceTree = "<group>"; };
 		9E8D92CD2B0CC2B7007955FE /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -213,13 +210,15 @@
 		9E097F552BC0D49D00D4BD67 /* Operators */ = {
 			isa = PBXGroup;
 			children = (
-				9EB07C1F2B03830C00E39198 /* Creating Operators */,
-				9E3753472B03B7AB0003DF02 /* Filtering Operators */,
-				9E76607F2B06546900E4C8B5 /* Transforming Operators */,
-				9E3B5E2A2B08687500A49C95 /* Combining Operators */,
-				9E3B5E342B08D09800A49C95 /* Conditional Operators */,
-				9E1765F22B013B9C000B2121 /* TimeBased Operators */,
-				9EE7FFF42B0AF29B00E51E36 /* Sharing Subscription */,
+				9E74094D2BC5281900A0AF3A /* Operator.playground */,
+				9EB07C1F2B03830C00E39198 /* Creating */,
+				9E3B5E2A2B08687500A49C95 /* Combining */,
+				9E3753472B03B7AB0003DF02 /* Filtering */,
+				9E76607F2B06546900E4C8B5 /* Transforming */,
+				9E3B5E342B08D09800A49C95 /* Conditioning */,
+				9E1765F22B013B9C000B2121 /* Timing */,
+				9EE7FFFB2B0B125D00E51E36 /* ErrorHandling */,
+				9EE7FFF42B0AF29B00E51E36 /* Sharing */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -243,19 +242,16 @@
 		9E1765DC2B013B8C000B2121 /* HelloRxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				9E097F552BC0D49D00D4BD67 /* Operators */,
-				9E097F542BC0D49100D4BD67 /* Traits */,
 				9E1765F32B013BAF000B2121 /* Basic */,
 				9E1765F42B013BB8000B2121 /* Observable */,
 				9E1766222B023F9E000B2121 /* Subject */,
+				9E097F542BC0D49100D4BD67 /* Traits */,
+				9E097F552BC0D49D00D4BD67 /* Operators */,
 				9EE7FFF92B0B01A900E51E36 /* Schedular */,
-				9EE7FFFB2B0B125D00E51E36 /* Error Handling */,
 				9E1765F12B013B95000B2121 /* RxCocoa */,
 				9E1765E62B013B8D000B2121 /* Assets.xcassets */,
 				9E1765E82B013B8D000B2121 /* LaunchScreen.storyboard */,
 				9E1765EB2B013B8D000B2121 /* Info.plist */,
-				9E1765DD2B013B8C000B2121 /* AppDelegate.swift */,
-				9E1765DF2B013B8C000B2121 /* SceneDelegate.swift */,
 			);
 			path = HelloRxSwift;
 			sourceTree = "<group>";
@@ -264,16 +260,18 @@
 			isa = PBXGroup;
 			children = (
 				9E8D92922B0CBFFA007955FE /* Model */,
+				9E1765DD2B013B8C000B2121 /* AppDelegate.swift */,
+				9E1765DF2B013B8C000B2121 /* SceneDelegate.swift */,
 				9E1765E32B013B8C000B2121 /* Main.storyboard */,
 				9E8D92DD2B0CC343007955FE /* Basic */,
 				9E8D92DC2B0CC331007955FE /* ViewController */,
-				9E8D92DB2B0CC321007955FE /* Custom */,
+				9E8D92DB2B0CC321007955FE /* Extensions */,
 				9ED2C9602B144D25008E01F9 /* RxDatasource */,
 			);
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
-		9E1765F22B013B9C000B2121 /* TimeBased Operators */ = {
+		9E1765F22B013B9C000B2121 /* Timing */ = {
 			isa = PBXGroup;
 			children = (
 				9E3B5E362B08D33B00A49C95 /* interval.playground */,
@@ -281,7 +279,7 @@
 				9E3B5E382B08D69900A49C95 /* timeout.playground */,
 				9E3B5E392B08D9A400A49C95 /* delay.playground */,
 			);
-			path = "TimeBased Operators";
+			path = Timing;
 			sourceTree = "<group>";
 		};
 		9E1765F32B013BAF000B2121 /* Basic */ = {
@@ -296,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				9E1766022B013C72000B2121 /* Observable.playground */,
-				9E17661F2B02392B000B2121 /* Observers.playground */,
+				9E17661F2B02392B000B2121 /* Observer.playground */,
 				9E1766202B0239EA000B2121 /* Infallible.playground */,
 				9E1766212B023C88000B2121 /* Disposables.playground */,
 			);
@@ -315,7 +313,7 @@
 			path = Subject;
 			sourceTree = "<group>";
 		};
-		9E3753472B03B7AB0003DF02 /* Filtering Operators */ = {
+		9E3753472B03B7AB0003DF02 /* Filtering */ = {
 			isa = PBXGroup;
 			children = (
 				9E3753482B03B7E80003DF02 /* ignoreElements.playground */,
@@ -335,10 +333,10 @@
 				9E76607D2B064F5E00E4C8B5 /* debounce.playground */,
 				9E76607E2B06517A00E4C8B5 /* throttle.playground */,
 			);
-			path = "Filtering Operators";
+			path = Filtering;
 			sourceTree = "<group>";
 		};
-		9E3B5E2A2B08687500A49C95 /* Combining Operators */ = {
+		9E3B5E2A2B08687500A49C95 /* Combining */ = {
 			isa = PBXGroup;
 			children = (
 				9E3B5E2B2B08689500A49C95 /* startWith.playground */,
@@ -351,18 +349,18 @@
 				9E3B5E322B08CA4500A49C95 /* switchLatest.playground */,
 				9E3B5E332B08CFCA00A49C95 /* reduce.playground */,
 			);
-			path = "Combining Operators";
+			path = Combining;
 			sourceTree = "<group>";
 		};
-		9E3B5E342B08D09800A49C95 /* Conditional Operators */ = {
+		9E3B5E342B08D09800A49C95 /* Conditioning */ = {
 			isa = PBXGroup;
 			children = (
 				9E3B5E352B08D0AA00A49C95 /* amb.playground */,
 			);
-			path = "Conditional Operators";
+			path = Conditioning;
 			sourceTree = "<group>";
 		};
-		9E76607F2B06546900E4C8B5 /* Transforming Operators */ = {
+		9E76607F2B06546900E4C8B5 /* Transforming */ = {
 			isa = PBXGroup;
 			children = (
 				9E7660802B0654A200E4C8B5 /* toArray.playground */,
@@ -377,7 +375,7 @@
 				9EC8BFBE2B0664DB003FD50D /* window.playground */,
 				9EC8BFBF2B066773003FD50D /* groupBy.playground */,
 			);
-			path = "Transforming Operators";
+			path = Transforming;
 			sourceTree = "<group>";
 		};
 		9E8D92922B0CBFFA007955FE /* Model */ = {
@@ -475,15 +473,6 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		9E8D929E2B0CC1EC007955FE /* Signal */ = {
-			isa = PBXGroup;
-			children = (
-				9E8D92AB2B0CC21B007955FE /* Signal.storyboard */,
-				9E8D92C72B0CC2A8007955FE /* SignalViewController.swift */,
-			);
-			path = Signal;
-			sourceTree = "<group>";
-		};
 		9E8D92A12B0CC1F8007955FE /* Traits */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,7 +492,7 @@
 			path = Binding;
 			sourceTree = "<group>";
 		};
-		9E8D92DB2B0CC321007955FE /* Custom */ = {
+		9E8D92DB2B0CC321007955FE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9E8D92982B0CC1C9007955FE /* Custom Binding */,
@@ -511,7 +500,7 @@
 				9E8D92962B0CC1A9007955FE /* Custom ControlProperty */,
 				9E8D92952B0CC1A4007955FE /* Delegate Proxy */,
 			);
-			path = Custom;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9E8D92DC2B0CC331007955FE /* ViewController */ = {
@@ -531,12 +520,11 @@
 			children = (
 				9E8D92A22B0CC1FC007955FE /* Binding */,
 				9E8D92A12B0CC1F8007955FE /* Traits */,
-				9E8D929E2B0CC1EC007955FE /* Signal */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
 		};
-		9EB07C1F2B03830C00E39198 /* Creating Operators */ = {
+		9EB07C1F2B03830C00E39198 /* Creating */ = {
 			isa = PBXGroup;
 			children = (
 				9EB07C202B0383DB00E39198 /* just.playground */,
@@ -550,7 +538,7 @@
 				9E3753442B0391E00003DF02 /* empty.playground */,
 				9E3753462B03920A0003DF02 /* error.playground */,
 			);
-			path = "Creating Operators";
+			path = Creating;
 			sourceTree = "<group>";
 		};
 		9ED2C9602B144D25008E01F9 /* RxDatasource */ = {
@@ -583,7 +571,7 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		9EE7FFF42B0AF29B00E51E36 /* Sharing Subscription */ = {
+		9EE7FFF42B0AF29B00E51E36 /* Sharing */ = {
 			isa = PBXGroup;
 			children = (
 				9EE7FFF52B0AF4FC00E51E36 /* multicast.playground */,
@@ -591,7 +579,7 @@
 				9EE7FFF72B0AFD2200E51E36 /* refCount.playground */,
 				9EE7FFF82B0AFFD000E51E36 /* share.playground */,
 			);
-			path = "Sharing Subscription";
+			path = Sharing;
 			sourceTree = "<group>";
 		};
 		9EE7FFF92B0B01A900E51E36 /* Schedular */ = {
@@ -602,7 +590,7 @@
 			name = Schedular;
 			sourceTree = "<group>";
 		};
-		9EE7FFFB2B0B125D00E51E36 /* Error Handling */ = {
+		9EE7FFFB2B0B125D00E51E36 /* ErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
 				9EE7FFFC2B0B126900E51E36 /* catch.playground */,
@@ -610,7 +598,7 @@
 				9EE7FFFE2B0B168800E51E36 /* retry.playground */,
 				9EE7FFFF2B0B174E00E51E36 /* retryWhen.playground */,
 			);
-			path = "Error Handling";
+			path = ErrorHandling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -696,7 +684,6 @@
 				9E1765E72B013B8D000B2121 /* Assets.xcassets in Resources */,
 				9E8D92B22B0CC228007955FE /* AlertController.storyboard in Resources */,
 				9E8D92B02B0CC223007955FE /* CollectionView.storyboard in Resources */,
-				9E8D92AC2B0CC21B007955FE /* Signal.storyboard in Resources */,
 				9E8D92BA2B0CC241007955FE /* CustomControlEvent.storyboard in Resources */,
 				9E1765E52B013B8C000B2121 /* Main.storyboard in Resources */,
 				9ED2C9682B144E73008E01F9 /* RxTableView.storyboard in Resources */,
@@ -728,7 +715,6 @@
 				9ED2C9722B14553D008E01F9 /* TodoData.swift in Sources */,
 				9E8D92D42B0CC2C7007955FE /* CustomBindingViewController.swift in Sources */,
 				9ED38D7E2B0CF8D00067AA14 /* ColorCollectionViewCell.swift in Sources */,
-				9E8D92C82B0CC2A8007955FE /* SignalViewController.swift in Sources */,
 				9ED38D7A2B0CD6DB0067AA14 /* ProductTableViewCell.swift in Sources */,
 				9E1765DE2B013B8C000B2121 /* AppDelegate.swift in Sources */,
 				9E1765E02B013B8C000B2121 /* SceneDelegate.swift in Sources */,
