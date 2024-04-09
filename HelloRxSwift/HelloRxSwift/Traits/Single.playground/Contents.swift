@@ -41,7 +41,7 @@ fetchPost()
     .subscribe { event in
         switch event {
         case let .success(post):
-            print("Post Fetch Result: \(post)")
+            print("Received Value: \($0)")
         case let .failure(error):
             print("Error: \(error)")
         }

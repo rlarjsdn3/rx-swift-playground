@@ -21,7 +21,7 @@ let infalliable = Infallible<Int>.create { observer in
 
 infalliable
     .subscribe {
-        print("Element: \($0)")
+        print("Received Value: \($0)")
     } onCompleted: {
         print("Completed")
     } onDisposed: {

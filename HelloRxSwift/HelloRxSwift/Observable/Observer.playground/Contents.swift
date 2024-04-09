@@ -10,7 +10,7 @@ let numOfArray = Array(1...10)
 
 Observable<Int>.from(numOfArray)
     .subscribe {
-        print("Element: \($0)")
+        print("Received Value: \($0)")
     } onCompleted: {
         print("Completed")
     } onDisposed: {

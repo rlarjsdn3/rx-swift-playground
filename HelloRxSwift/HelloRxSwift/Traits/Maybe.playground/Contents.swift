@@ -29,7 +29,7 @@ generateString("Swift")
     .subscribe { result in
         switch result {
         case let .success(string):
-            print("String: \(string)")
+            print("Received Value: \($0)")
         case .completed:
             print("Completed")
         case let .error(error):

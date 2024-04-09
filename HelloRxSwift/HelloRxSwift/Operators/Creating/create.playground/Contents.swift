@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 
 //: # create
+//: 직접 `Observable`의 동작을 제어할 수 있는 `Observable`을 선언합니다. 네트워크 통신과 같은 복잡한 로직을 처리해야 하는 경우에 유용합니다.
 
 let disposeBag = DisposeBag()
 
@@ -9,23 +10,32 @@ enum MyError: Error {
     case error
 }
 
-//// 옵저버블을 동작을 직접 구현함.
-Observable<String>.create { observer -> Disposable in
-    guard let url = URL(string: "https://www.apple.com") else {
-        observer.onError(MyError.error)
+typealias PostType = [String: Any]
+func fetchPost(url: URL) -> Observable<[PostType]> {
+    let request = URLRequest(url: url)
+    
+    return Observable<[PostType]>.create { observer in
+        let task = URLSession.shared.dataTask(with: request) { data, response, _ in
+            guard let data = data,
+                  let dict = try? JSONSerialization.jsonObject(with: data, options: []) as? [PostType] else {
+                observer.onError(MyError.error)
+                return
+            }
+            
+            observer.onNext(dict)
+        }
+        
+        task.resume()
+        
         return Disposables.create()
     }
-    
-    guard let html = try? String(contentsOf: url, encoding: .utf8) else {
-        observer.onError(MyError.error)
-        return Disposables.create()
-    }
-    
-    observer.onNext(html)
-    observer.onCompleted()
-    // Observable의 리소스를 정리하고 종료하는 역할을 함.
-    return Disposables.create()
 }
-.subscribe { print($0) }
-//  DisposeBag에 해당 Disposable을 추가함으로써 DisposeBag의 수명 주기에 Disposable을 연결하여 메모리 누수를 방지하고 효율적으로 리소스를 관리함.
-.disposed(by: disposeBag)
+
+let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+
+fetchPost(url: url)
+    .retry(3)
+    .subscribe {
+        print("Received Value: \($0)")
+    }
+    .disposed(by: disposeBag)

@@ -14,13 +14,13 @@ enum MyError: Error {
 let subject = BehaviorSubject<Int>(value: 1)
 
 subject
-    .subscribe { print("S1 - Element: \($0)") }
+    .subscribe { print("S1 - Received Value: \($0)") }
     .disposed(by: disposeBag)
 
 subject.onNext(2)
 
 subject
-    .subscribe { print("S2 - Element: \($0)") }
+    .subscribe { print("S2 - Received Value: \($0)") }
     .disposed(by: disposeBag)
 
 subject.onNext(3)

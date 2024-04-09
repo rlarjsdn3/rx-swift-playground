@@ -10,7 +10,7 @@ let observable = Observable<Int>.of(1, 2, 3)
     .subscribe { event in
         switch event {
         case let .next(element):
-            print("Element: \(element)")
+            print("Received Value: \($0)")
         case .error:
             print("Error")
         case .completed:

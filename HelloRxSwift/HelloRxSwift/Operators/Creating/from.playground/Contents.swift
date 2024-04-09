@@ -2,15 +2,15 @@ import UIKit
 import RxSwift
 
 //: # from
+//: 배열 요소를 하나씩 항목으로 방출하는 `Observable`을 선언합니다.
 
 let disposeBag = DisposeBag()
 
-// 배열 속 요소를 하나씩 꺼내어 방출하는 옵져버블 생성
-//Observable<Int>.from([1, 2, 3, 4, 5])
-//    .subscribe { print($0) }
-//    .disposed(by: disposeBag)
-
-
-Observable<Int>.from
-    .subscribe { print($0) }
+let numOfArray = [1, 2, 3, 4, 5]
+Observable<Int>.from(numOfArray)
+    .subscribe {
+        print("Received Value: \($0)")
+    }
     .disposed(by: disposeBag)
+
+

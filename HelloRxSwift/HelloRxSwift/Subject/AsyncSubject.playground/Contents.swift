@@ -9,7 +9,7 @@ let disposeBag = DisposeBag()
 let subject = AsyncSubject<Int>()
 
 subject
-    .subscribe { print("Element: \($0)") }
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)
 
 subject.onNext(1)

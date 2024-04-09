@@ -26,5 +26,5 @@ let observable = Observable<Int>.create { observer in
 }
 
 observable
-    .subscribe { print($0) }
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)
