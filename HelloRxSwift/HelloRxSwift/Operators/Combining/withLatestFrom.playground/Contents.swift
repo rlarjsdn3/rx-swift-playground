@@ -2,32 +2,23 @@ import UIKit
 import RxSwift
 
 //: # withLatestFrom
+//: 소스 `Observable`은 트리거 `Observable`이 항목을 방출할 때, 최근 방출한 항목을 전달하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
-enum MyError: Error {
-    case error
-}
-
+let subject = PublishSubject<String>()
 let trigger = PublishSubject<Void>()
-let source = PublishSubject<String>()
 
-// 트리거 옵저버블이 Next 이벤트를 방출하면 소스 옵저버블이 마지막으로 방출한 Next 이벤트를 구독자에게 전달함.
-trigger.withLatestFrom(source) // ❗️ 순서에 신경써야 함!
-    .subscribe { print($0) }
-    .disposed(by: disposeBag)
+trigger.withLatestFrom(subject) { "Hello, \($1)" }
+.subscribe { print("Received Value: \($0)") }
+.disposed(by: disposeBag)
 
-source.onNext("Swift")
-source.onNext("RxSwift")
+subject.onNext("Swift")
+subject.onNext("RxSwift")
+trigger.onNext(())
 
+subject.onNext("C++")
 trigger.onNext(())
 trigger.onNext(())
 
-source.onNext("Alamofire")
-source.onNext("Kingfisher")
-
-trigger.onNext(())
-
-// 트리거 옵저버블이 Completed 이벤트를 방출해야, 시퀀스가 종료됨.
 trigger.onCompleted()
-

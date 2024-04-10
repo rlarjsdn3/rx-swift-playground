@@ -2,33 +2,28 @@ import UIKit
 import RxSwift
 
 //: # zip
+//: `Observable`이 방출한 항목을 Index를 기준으로 짝을 맞출 수 있다면 합쳐서 항목을 방출하는 연산자입니다. 짝이 없다면 항목을 방출하지 않습니다.
 
-let bag = DisposeBag()
+let disposeBag = DisposeBag()
 
-enum MyError: Error {
-    case error
-}
+let number = PublishSubject<Int>()
+let letter = PublishSubject<String>()
 
-let numbers = PublishSubject<Int>()
-let strings = PublishSubject<String>()
+Observable.zip(number, letter)
+    .subscribe {
+        print("Received Value: \($0)")
+    }
+    .disposed(by: disposeBag)
 
-// 인덱스를 기준으로 짝을 맞추어 결합한 이벤트를 방출함. (Indexed Sequencing)
-// 결합할 짝이 없는 이벤트는 구독자에게 전달되지 않음.
-Observable.zip(numbers, strings) { "\($0): \($1)" }
-    .subscribe { print($0) }
-    .disposed(by: bag)
+number.onNext(1)
+letter.onNext("One")
 
-numbers.onNext(1)
-strings.onNext("One")
+number.onNext(2)
+number.onNext(3)
+letter.onNext("Two")
 
-numbers.onNext(2)
-strings.onNext("Two")
+number.onNext(4)
+letter.onNext("Three")
 
-numbers.onNext(3)
-strings.onNext("Three")
-
-strings.onNext("Four")
-
-// 병합한 모든 옵저버블이 Completed 이벤트를 방출해야, 구독자에게 완료 이벤트를 방출함.
-numbers.onCompleted()
-strings.onCompleted()
+number.onCompleted()
+letter.onCompleted()

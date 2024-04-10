@@ -2,26 +2,25 @@ import UIKit
 import RxSwift
 
 //: # sample
+//: 소스 `Observable`은 트리거 `Observable`이 항목을 방출할 때, 이전 항목과 동일하지 않으면 최근 방출한 항목을 전달하는 연산자입니다. withLatesetFrom과 distinctUntilChanged를 합친 연산자입니다.
 
 let disposeBag = DisposeBag()
 
+let subject = PublishSubject<String>()
 let trigger = PublishSubject<Void>()
-let source = PublishSubject<String>()
 
-// withLatestFrom과 distinctUntilChanged를 합친 연산자임.
-// 트리거 옵저버블이 Next 이벤트를 전달할 때마다 소스 옵저버블이 Next 이벤트를 방출하지만, 동일한 Next 이벤트를 반복해서 방출하지 않음.
-source.sample(trigger) // ❗️ 순서가 withLatestFrom 연산자와 반대임!
-    .subscribe { print($0) }
-    .disposed(by: disposeBag)
+subject.sample(trigger)
+.subscribe { print("Received Value: \($0)") }
+.disposed(by: disposeBag)
+
+subject.onNext("Swift")
+subject.onNext("RxSwift")
+trigger.onNext(())
+
+subject.onNext("C++")
+trigger.onNext(())
 
 trigger.onNext(())
 
-source.onNext("Swift")
-source.onNext("RxSwift")
+trigger.onCompleted()
 
-trigger.onNext(())
-trigger.onNext(())
-
-// 소스 옵저버블이 Completed 이벤트를 방출해야, 시퀀스가 종료됨.
-source.onCompleted()
-trigger.onNext(())
