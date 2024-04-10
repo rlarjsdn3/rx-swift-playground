@@ -2,12 +2,14 @@ import UIKit
 import RxSwift
 
 //: # take
+//: 일정 횟수만큼 `next` 항목을 받고, 이후 항목을 무시하는 연산자입니다.
 
 let disposeBag = DisposeBag()
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-// 처음 n개의 이벤트만 방출하고, 이후 이벤트는 무시함.
-Observable.from(numbers)
-    .take(5)
-    .subscribe { print($0) }
+let numOfArray = Array(1...10)
+Observable<Int>.from(numOfArray)
+    .take(2)
+    .subscribe {
+        print("Received Value: \($0)")
+    }
     .disposed(by: disposeBag)

@@ -2,12 +2,14 @@ import UIKit
 import RxSwift
 
 //: # elementAt
+//: 특정 Index에 위치한 `next` 항목만 제한적으로 방출하는 연산자입니다.
 
 let disposeBag = DisposeBag()
-let fruits = ["🍏", "🍎", "🍋", "🍓", "🍇"]
 
-// 특정 인덱스에 위치한 이벤트만 제한적으로 방출함.
-Observable.from(fruits)
-    .element(at: 2)
-    .subscribe { print($0) }
+let numOfArray = [1, 2, 3, 4, 5]
+Observable<Int>.from(numOfArray)
+    .element(at: 3)
+    .subscribe {
+        print("Received Value: \($0)")
+    }
     .disposed(by: disposeBag)

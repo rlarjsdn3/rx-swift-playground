@@ -86,7 +86,7 @@
 		9E37534A2B03B9670003DF02 /* filter.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = filter.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E37534B2B03BA170003DF02 /* skip.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = skip.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E37534C2B03BB270003DF02 /* skipWhile.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = skipWhile.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		9E37534D2B03BCEC0003DF02 /* SkipUntil.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SkipUntil.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9E37534D2B03BCEC0003DF02 /* skipUntil.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = skipUntil.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E37534E2B03BEC70003DF02 /* skipDuration.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = skipDuration.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E3B5E2B2B08689500A49C95 /* startWith.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = startWith.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9E3B5E2C2B0869E800A49C95 /* concat.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = concat.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -212,13 +212,13 @@
 			children = (
 				9E74094D2BC5281900A0AF3A /* Operator.playground */,
 				9EB07C1F2B03830C00E39198 /* Creating */,
-				9E3B5E2A2B08687500A49C95 /* Combining */,
 				9E3753472B03B7AB0003DF02 /* Filtering */,
 				9E76607F2B06546900E4C8B5 /* Transforming */,
+				9E3B5E2A2B08687500A49C95 /* Combining */,
 				9E3B5E342B08D09800A49C95 /* Conditioning */,
 				9E1765F22B013B9C000B2121 /* Timing */,
-				9EE7FFFB2B0B125D00E51E36 /* ErrorHandling */,
 				9EE7FFF42B0AF29B00E51E36 /* Sharing */,
+				9EE7FFFB2B0B125D00E51E36 /* ErrorHandling */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 				9E37534A2B03B9670003DF02 /* filter.playground */,
 				9E37534B2B03BA170003DF02 /* skip.playground */,
 				9E37534C2B03BB270003DF02 /* skipWhile.playground */,
-				9E37534D2B03BCEC0003DF02 /* SkipUntil.playground */,
+				9E37534D2B03BCEC0003DF02 /* skipUntil.playground */,
 				9E37534E2B03BEC70003DF02 /* skipDuration.playground */,
 				9E7660762B06433E00E4C8B5 /* take.playground */,
 				9E7660772B0643CB00E4C8B5 /* takeWhile.playground */,

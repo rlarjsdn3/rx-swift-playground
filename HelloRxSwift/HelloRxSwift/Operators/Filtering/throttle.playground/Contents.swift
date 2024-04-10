@@ -2,21 +2,17 @@ import UIKit
 import RxSwift
 
 //: # throttle
+//: 일정 주기 동안 `Observable`이 방출하는 최근 혹은 처음 항목을 전달하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
-func currentTimeString() -> String {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-    return formatter.string(from: Date())
-}
-
-// 일정 주기 동안 최근 하나의 이벤트만 방출함.
-Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-    .debug()
-    .take(10)
-    // ・ true: 주기를 정확하게 지킴.
-    // ・ false: 주기를 유하게 지킴. 주기가 지난 이후에 처음으로 방출되는 이벤트를 방출함.
-    .throttle(.seconds(2), latest: false, scheduler: MainScheduler.instance)
-    .subscribe { print($0) }
+Observable<Int>.interval(.seconds(3), scheduler: MainScheduler.instance)
+    .debug("\(Date().description)")
+    // latest-true: 주기가 끝나는 시점에 마지막 항목 방출O
+    // latest-false: 주지가 끝나는 시점에 마지막 항목 방출X
+    .throttle(.seconds(10), latest: false, scheduler: MainScheduler.instance)
+    .take(5)
+    .subscribe {
+        print("Recevied Value: \($0)")
+    }
     .disposed(by: disposeBag)

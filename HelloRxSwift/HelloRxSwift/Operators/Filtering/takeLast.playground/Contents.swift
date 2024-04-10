@@ -2,27 +2,18 @@ import UIKit
 import RxSwift
 
 //: # takeLast
+//: `Observable`이 방출하는 항목을 주어진 크기의 버퍼에 저장해두고, `completed` 항목을 방출하는 시점에 버퍼에 저장된 항목을 방출하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
-enum MyError: Error {
-    case error
-}
+let upstream = PublishSubject<Int>()
 
-let subject = PublishSubject<Int>()
-
-// 옵저버블이 마지막으로 방출한 N개의 이벤트를 버퍼에 저장해두었다가,
-// 옵저버블이 completed 이벤트를 방출하는 시점에 버퍼에 저장된 이벤트를 모두 방출하고, completed 이벤트를 방출함.
-subject
-    .takeLast(2)
-    .subscribe { print($0) }
+upstream
+    .takeLast(3)
+    .subscribe {
+        print("Recevied Value: \($0)")
+    }
     .disposed(by: disposeBag)
 
-subject.onNext(10)
-subject.onNext(20)
-subject.onNext(30)
-
-// 에러 이벤트를 방출하면 버퍼에 저장된 이벤트는 모두 버려지게 되고, 에러 이벤트만 방출함.
-//subject.onError(MyError.error)
-
-subject.onCompleted()
+(1...5).forEach { upstream.onNext($0) }
+upstream.onCompleted()
