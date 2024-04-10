@@ -2,32 +2,23 @@ import UIKit
 import RxSwift
 
 //; # concapMap
+//: 소스 `Observable`이 방출하는 `next` 항목을 대상으로 클로저를 실행해 새로운 이너 `Observable`로 변환하는 연산자입니다. 이너 옵저버블이 생성된 순서대로 항목을 방출합니다.
 
 let disposeBag = DisposeBag()
 
-let redCircle = "🔴"
-let greenCircle = "🟢"
-let blueCircle = "🔵"
-
-let redHeart = "❤️"
-let greenHeart = "💚"
-let blueHeart = "💙"
-
-// 원본 옵저버블이 방출하는 요소를 대상으로 함수를 실행하고, 결과를 새로운 이너 옵저버블로 반환함.
-// 원본 옵져버블이 방출되는 이벤트의 수만큼 이너 옵져버블이 생성되며, 결과 옵져버블로 합쳐저 순차적으로 구독자에게 이벤트를 방출함.
-Observable.from([redCircle, greenCircle, blueCircle])
-    .concatMap { circle -> Observable<String> in
-        switch circle {
-        case redCircle:
-            return Observable.repeatElement(redHeart).take(5)
-        case greenCircle:
-            return Observable.repeatElement(greenHeart).take(5)
-        case blueCircle:
-            return Observable.repeatElement(blueHeart).take(5)
-        default:
-            return Observable.just("")
+let numOfArray = Array(1...9)
+Observable<Int>.from(numOfArray)
+    .concatMap { value in
+        return Observable<[Int]>.create { observer  in
+            var result: [Int] = []
+            (1...9).forEach { number in
+                result.append(value * number)
+            }
+            observer.onNext(result)
+            return Disposables.create()
         }
     }
-    // flatMap 연산자와는 다르게, 각 이너 옵져버블이 순서를 지킴.
-    .subscribe { print($0) }
+    .subscribe {
+        print("Received Value: \($0)")
+    }
     .disposed(by: disposeBag)

@@ -1,36 +1,24 @@
 import UIKit
 import RxSwift
 
-//; # flatMapFirst
+//: # flatMapFirst
+//: 소스 `Observable`이 방출하는 `next` 항목을 대상으로 클로저를 실행해 새로운 이너 `Observable`로 변환하는 연산자입니다. 앞서 생성된 이너 옵저버블이 모든 항목을 방출할 때까지 이후 생성된 이너 `Observable`은 무시됩니다.
 
 let disposeBag = DisposeBag()
 
-let redCircle = "🔴"
-let greenCircle = "🟢"
-let blueCircle = "🔵"
-
-let redHeart = "❤️"
-let greenHeart = "💚"
-let blueHeart = "💙"
-
-// ⭐️ flatMapFirst와 flatMapLast는 생성된 이너 옵져버블의 우선순위에 따른 차이가 있음.
-
-// 가장 먼저 방출한 이너 옵져버블만 결과 옵져버블에게 전달되고, 나머지 이너 옵져버블은 앞서 전달된 이너 옵져버블이 모든 이벤트를 방출할 때까지 무시됨.
-// 이후 동작은 flatMap 연산자와 동일함.
-Observable.from([redCircle, greenCircle, blueCircle])
-    .flatMapFirst { circle -> Observable<String> in
-        switch circle {
-        case redCircle:
-            return Observable.repeatElement(redHeart).take(5)
-        case greenCircle:
-            return Observable.repeatElement(greenHeart).take(5)
-        case blueCircle:
-            return Observable.repeatElement(blueHeart).take(5)
-        default:
-            return Observable.just("")
+let numOfArray = Array(1...9)
+Observable<Int>.from(numOfArray)
+    .flatMapFirst { value in
+        return Observable<[Int]>.create { observer  in
+            var result: [Int] = []
+            (1...9).forEach { number in
+                result.append(value * number)
+            }
+            observer.onNext(result)
+            return Disposables.create()
         }
     }
-    // 그런데, 이너 옵져버블이 생성되면 결과 옵져버블에서 지연없이 이벤트를 방출하기 때문에 순서에 맞게 이벤트를 방출하는 건 아님.
-    // 순서를 지키고 싶다면, concatMap 연산자를 사용해야 함.
-    .subscribe { print($0) }
+    .subscribe {
+        print("Received Value: \($0)")
+    }
     .disposed(by: disposeBag)

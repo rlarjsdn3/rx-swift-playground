@@ -2,20 +2,21 @@ import UIKit
 import RxSwift
 
 //: # toArray
+//: `Observable`이 방출하는 모든 `next` 항목을 `completed` 항목이 방출될 때 배열로 묶어 방출하게 하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
-// 옵저버블이 방출하는 모든 이벤트를 하나의 배열을 요소로 갖는 이벤트를 방출하는 싱글 옵저버블로 반환함.
 let subject = PublishSubject<Int>()
 
 subject
     .toArray()
-    .subscribe { print($0) }
+    .subscribe {
+        print("Received Value: \($0)")
+    }
     .disposed(by: disposeBag)
 
-subject.onNext(10)
-subject.onNext(20)
-subject.onNext(30)
-// Completed 이벤트를 방출하면, 그 동안 전달한 모든 요소를 배열로 한데 묶어 이벤트로 방출함.
-subject.onCompleted()
+subject.onNext(1)
+subject.onNext(2)
+subject.onNext(3)
 
+subject.onCompleted()
