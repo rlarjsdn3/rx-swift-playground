@@ -2,27 +2,47 @@ import UIKit
 import RxSwift
 
 //: # schedular
+//: `Observable`이 항목을 방출하거나, 항목이 `Operator`를 거칠 때 어느 쓰레드(Thread)에서 이를 수행하게 할 지 결정하게 하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-let backgroundSchedular = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global())
+enum MyError: Error {
+    case error
+}
 
-// ・ observe(on:) 메서드: 구독을 포함한 연산자가 실행할 쓰레드를 지정함. 순서가 중요함.
-// ・ subscribe(on:) 메서드: 구독을 시작하고, 종료할 때 실행할 쓰레드를 지정함. 순서가 중요하지 않음.
-Observable<Int>.from(numbers)
-    .subscribe(on: MainScheduler.instance)
-    .filter { num in
-        print(Thread.isMainThread ? "Main Thread" : "Background Thread", ">> filter")
-        return num.isMultiple(of: 2)
-    }
-    .observe(on: backgroundSchedular)
-    .map { num in
-        print(Thread.isMainThread ? "Main Thread" : "Background Thread", ">> map")
-        return num * 2
-    }
+struct User: Decodable {
+    var username: String
+    var email: String
+}
+
+let myURL = URL(string: "https://jsonplaceholder.typicode.com/users")
+let myRequest = URLRequest(url: myURL!)
+
+URLSession.shared.rx.data(request: myRequest)
+    // Observing Code 영역이 어느 쓰레드에서 수행하게 할 지 결정
+    .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+    .do(onNext: { _ in print("Main Thread: \(Thread.isMainThread)") })
+    // Subscribing Code 영역이 어느 쓰레드에서 수행하게 할 지 결정
     .observe(on: MainScheduler.instance)
-    .subscribe {
-        print(Thread.isMainThread ? "Main Thread" : "Background Thread", ">> subscribe >>", "\($0)")
-    }
+    .do(onNext: { _ in print("Main Thread: \(Thread.isMainThread)") })
+    .decode(of: [User].self)
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)
+    
+extension Observable where Element == Data {
+    func decode<T>(of type: T.Type) -> Observable<T> where T: Decodable {
+        flatMap { element in
+            Observable<T>.create { observer in
+                do {
+                    let decoder = JSONDecoder()
+                    let parsing = try decoder.decode(type, from: element)
+                    observer.onNext(parsing)
+                } catch {
+                    observer.onError(MyError.error)
+                }
+                
+                return Disposables.create()
+            }
+        }
+    }
+}
