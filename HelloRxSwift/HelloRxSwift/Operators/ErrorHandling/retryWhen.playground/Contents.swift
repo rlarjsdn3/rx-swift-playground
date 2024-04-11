@@ -2,6 +2,7 @@ import UIKit
 import RxSwift
 
 //: # retryWhen
+//: `Observable`이 `error` 항목을 방출하면 트리거 `Observable`이 항목을 방출할 때 재시도(재방출)을 하게 하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
@@ -9,31 +10,19 @@ enum MyError: Error {
     case error
 }
 
-let subject = PublishSubject<Int>()
+let myURL = URL(string: "zzzz://www.apple.com")
+let myRequest = URLRequest(url: myURL!)
+
 let trigger = PublishSubject<Void>()
 
-var attempts = 1
-
-// 옵저버블이 에러 이벤트를 방출하면, 트리거 옵저버블이 Next 이벤트를 전달하면 기존 옵저버블에 대한 구독을 해제하고, 새로운 시퀀스를 구독함. (처음부터 다시 시작)
-let source = Observable<Int>.create { observer in
-    let currentAttempts = attempts
-    print("#\(currentAttempts) START")
-    
-    if attempts < 3 {
-        observer.onError(MyError.error)
-        attempts += 1
+URLSession.shared.rx.data(request: myRequest)
+    .retry(when: { _ in trigger })
+    .map { String(data: $0, encoding: .utf8) }
+    .subscribe {
+        print("Received Value: \($0)")
     }
-    
-    observer.onNext(1)
-    observer.onNext(2)
-    observer.onCompleted()
-    
-    return Disposables.create {
-        print("#\(currentAttempts) END")
-    }
-}
-
-source
-    .retry(when: { _ in trigger}) // 이때, 첫 시퀀스도 시도 1이라고 침.
-    .subscribe { print($0) }
     .disposed(by: disposeBag)
+
+DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+    trigger.onNext(())
+}

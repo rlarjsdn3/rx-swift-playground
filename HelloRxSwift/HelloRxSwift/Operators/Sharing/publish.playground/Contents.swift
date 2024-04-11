@@ -2,24 +2,26 @@ import UIKit
 import RxSwift
 
 //: # Publish
+//: `PublishSubject`를 생성해 multicast 연산자의 매개변수로 전달하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
-// multicast 연산자와 PublishSubject 서브젝트를 합친 연산자임.
-// 내부적으로 PublishSubject를 만들어 multicast 연산자의 파라미터로 전달한 결과(ConnectableObservable)를 반환함.
-
-let source = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-    .take(5)
+let numbers = ["First", "Second", "Thrid"]
+let observable = Observable<String>.from(numbers)
+    .map { ($0, Int.random(in: 0...100)) }
+    .debug("Random")
     .publish()
-//    .replay(3)
 
-source
-    .subscribe { print("🔵", $0) }
+observable
+    .subscribe {
+        print("Stream 1 Received: \($0)")
+    }
     .disposed(by: disposeBag)
 
-source
-    .delaySubscription(.seconds(3), scheduler: MainScheduler.instance)
-    .subscribe { print("🔴", $0) }
+observable
+    .subscribe {
+        print("Stream 2 Received: \($0)")
+    }
     .disposed(by: disposeBag)
 
-source.connect()
+observable.connect()

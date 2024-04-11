@@ -2,28 +2,28 @@ import UIKit
 import RxSwift
 
 //: # multicast
+//: `Observable`이 방출하는 항목을 여러 `Observer`에게 공유하도록 유니캐스트에서 멀티캐스트로 바꿔주는 연산자입니다. 매개변수로 `Subject`를 전달해야 합니다. 모든 `Observer`가 구독을 하고, connect() 메서드를 호출해야 합니다.
 
 let disposeBag = DisposeBag()
-let publishSubject = PublishSubject<Int>()
 
-// 소스 옵저버블이 방출하는 이벤트 시퀀스를 하나 이상의 구독자가 공유하기 위해 사용함.
-// Subject 타입을 파라미터로 받으며, 소스 옵져버블은 구독자가 아니라 서브젝트에 이벤트를 전달하게 됨.
-// 그리고, 서브젝트는 다수의 구독자에게 이벤트를 방출함.
-let source = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-    .take(5)
-    .multicast(publishSubject)
-// multicast 연산자는 ConnectableObservable 타입을 반홤함.
-// (유니캐스트 방식으로 동작하는 옵저버블을 멀티캐스트 방식으로 바꿔주는 거임)
+let subject = PublishSubject<(String, Int)>()
 
-source
-    .subscribe { print("🔵", $0) }
+let numbers = ["First", "Second", "Thrid"]
+let observable = Observable<String>.from(numbers)
+    .map { ($0, Int.random(in: 0...100)) }
+    .debug("Random")
+    .multicast(subject)
+
+observable
+    .subscribe {
+        print("Stream 1 Received: \($0)")
+    }
     .disposed(by: disposeBag)
 
-source
-    .delaySubscription(.seconds(3), scheduler: MainScheduler.instance)
-    .subscribe { print("🔴", $0) }
+observable
+    .subscribe {
+        print("Stream 2 Received: \($0)")
+    }
     .disposed(by: disposeBag)
 
-// 이 옵저버블은 구독자가 추가되는 시점에 시퀀스를 시작하는 게 아닌,
-// connect 메서드를 직접 호출해주어야 시퀀스가 시작됨! (모든 구독자가 추가된 이후에 하나의 시퀀스를 시작하는 패턴)
-source.connect()
+observable.connect()
