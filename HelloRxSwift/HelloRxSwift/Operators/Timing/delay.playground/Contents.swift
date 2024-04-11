@@ -1,8 +1,6 @@
 import UIKit
 import RxSwift
 
-let disposeBag = DisposeBag()
-
 func currentTimeString() -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
@@ -10,8 +8,10 @@ func currentTimeString() -> String {
 }
 
 //: # delay
+//: `Observable`이 `next` 항목 방출을 일정 시간만큼 지연시키는 연산자입니다.
 
-// Next 이벤트를 구독자에게 전달하는 시점을 지연시킴.
+let disposeBag = DisposeBag()
+
 Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
     .take(10)
     .debug()
@@ -19,11 +19,9 @@ Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
     .subscribe { print(currentTimeString(), $0) }
     .disposed(by: disposeBag)
 
-
-
 //: # subscriptionDelay
+//: `Observable`을 구독하는 시점을 일정 시간만큼 지연시키는 연산자입니다. 단, `next` 항목을 방출하는 시점은 지연시키지 않습니다.
 
-// 구독이 이루어지는 시점을 지연시킴. (Next 이벤트를 전달하는 시점을 지연시키는 게 아님)
 Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
     .take(10)
     .debug()

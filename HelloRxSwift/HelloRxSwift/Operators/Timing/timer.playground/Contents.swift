@@ -2,11 +2,17 @@ import UIKit
 import RxSwift
 
 //: # timer
+//: 일정 시간 지연 후(duetime), 일정 주기마다 정수값 항목을 방출하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
-// 지연 시간과 반복 주기를 지정해서 정수를 방출함.
-Observable<Int>.timer(.seconds(2), period: .seconds(3), scheduler: MainScheduler.instance)
-    .take(10) // 2초 지연 후, 3초 주기마다 이벤트를 방출함.
-    .subscribe { print($0) }
-    .disposed(by: disposeBag)
+Observable<Int>.timer(
+    .seconds(3),
+    period: .seconds(2),
+    scheduler: MainScheduler.instance
+)
+.take(10)
+.subscribe {
+    print("Received Value: \($0)")
+}
+.disposed(by: disposeBag)

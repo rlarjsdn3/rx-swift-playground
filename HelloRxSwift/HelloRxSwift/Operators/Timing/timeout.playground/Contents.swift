@@ -2,17 +2,22 @@ import UIKit
 import RxSwift
 
 //: # timeout
+//: 지정 시간 내 `Observable`이 항목을 방출하지 않으면 `error` 항목을 전달하는 연산자입니다.
 
 let disposeBag = DisposeBag()
 
 let subject = PublishSubject<Int>()
-
-// 지정된 시간 이내에 요소를 방출하지 않으면 에러 이벤트를 전달함.
 subject
-    .timeout(.seconds(3), other: Observable.just(-999), scheduler: MainScheduler.instance) // 지정된 시간 이내에 요소를 방출하지 않으면, other 파라미터로 전달된 옵저버블로 교체됨.
-    .subscribe { print($0) }
+    .timeout(
+        .seconds(2), 
+        other: Observable<Int>.just(-1),
+        scheduler: MainScheduler.instance
+    )
+    .subscribe {
+        print("Received Value: \($0)")
+    }
     .disposed(by: disposeBag)
 
-Observable<Int>.timer(.seconds(5), scheduler: MainScheduler.instance)
-    .subscribe { subject.onNext($0.element ?? 0) }
-    .disposed(by: disposeBag)
+DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+    subject.onNext(7)
+}
