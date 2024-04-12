@@ -19,7 +19,6 @@ class CustomBindingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 커스텀 바인드는 옵저버 역할만 수행해야 할 때 적합함.
         colorPicker.rx.selectedSegmentIndex
             .bind(to: valueLabel.rx.segmentedValue)
             .disposed(by: disposeBag)
@@ -27,25 +26,24 @@ class CustomBindingViewController: UIViewController {
 
 }
 
+// Binder 확장은 Observer가 수행해야 하는 로직을 달리 구현할 때 적합한 방법입니다.
+
 extension Reactive where Base: UILabel {
-    // 전달받을 요소의 타입은 Int
+
     var segmentedValue: Binder<Int> {
         Binder(self.base) { label, index in
             switch index {
             case 0:
-                label.text = "Red"
                 label.textColor = .systemRed
             case 1:
-                label.text = "Green"
                 label.textColor = .systemGreen
             case 2:
-                label.text = "Blue"
                 label.textColor = .systemBlue
             default:
-                label.text = "Unknwon"
                 label.textColor = .systemGray5
             }
         }
     }
+    
 }
 

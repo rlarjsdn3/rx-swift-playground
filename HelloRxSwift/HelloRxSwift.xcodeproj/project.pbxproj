@@ -274,7 +274,7 @@
 				9E1765E32B013B8C000B2121 /* Main.storyboard */,
 				9E8D92DD2B0CC343007955FE /* Basic */,
 				9E8D92DC2B0CC331007955FE /* ViewController */,
-				9E8D92DB2B0CC321007955FE /* Extensions */,
+				9E8D92952B0CC1A4007955FE /* DelegateProxy */,
 				9ED2C9602B144D25008E01F9 /* RxDatasource */,
 			);
 			path = RxCocoa;
@@ -378,6 +378,16 @@
 			path = Type;
 			sourceTree = "<group>";
 		};
+		9E3B76292BC8EF1A00C93DDC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E8D92982B0CC1C9007955FE /* Binding */,
+				9E8D92972B0CC1BF007955FE /* ControlEvent */,
+				9E8D92962B0CC1A9007955FE /* ControlProperty */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9E76607F2B06546900E4C8B5 /* Transforming */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,40 +415,40 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		9E8D92952B0CC1A4007955FE /* Delegate Proxy */ = {
+		9E8D92952B0CC1A4007955FE /* DelegateProxy */ = {
 			isa = PBXGroup;
 			children = (
 				9E8D92BD2B0CC24C007955FE /* DelegateProxy.storyboard */,
 				9E8D92D92B0CC2DD007955FE /* DelegateProxyViewController.swift */,
 			);
-			path = "Delegate Proxy";
+			path = DelegateProxy;
 			sourceTree = "<group>";
 		};
-		9E8D92962B0CC1A9007955FE /* Custom ControlProperty */ = {
+		9E8D92962B0CC1A9007955FE /* ControlProperty */ = {
 			isa = PBXGroup;
 			children = (
 				9E8D92BB2B0CC247007955FE /* CustomControlProperty.storyboard */,
 				9E8D92D72B0CC2D7007955FE /* CustomControlPropertyViewController.swift */,
 			);
-			path = "Custom ControlProperty";
+			path = ControlProperty;
 			sourceTree = "<group>";
 		};
-		9E8D92972B0CC1BF007955FE /* Custom ConstrolEvent */ = {
+		9E8D92972B0CC1BF007955FE /* ControlEvent */ = {
 			isa = PBXGroup;
 			children = (
 				9E8D92B92B0CC241007955FE /* CustomControlEvent.storyboard */,
 				9E8D92D52B0CC2CE007955FE /* CustomControlEventViewController.swift */,
 			);
-			path = "Custom ConstrolEvent";
+			path = ControlEvent;
 			sourceTree = "<group>";
 		};
-		9E8D92982B0CC1C9007955FE /* Custom Binding */ = {
+		9E8D92982B0CC1C9007955FE /* Binding */ = {
 			isa = PBXGroup;
 			children = (
 				9E8D92B72B0CC23A007955FE /* CustomBinding.storyboard */,
 				9E8D92D32B0CC2C7007955FE /* CustomBindingViewController.swift */,
 			);
-			path = "Custom Binding";
+			path = Binding;
 			sourceTree = "<group>";
 		};
 		9E8D92992B0CC1CE007955FE /* Gesture */ = {
@@ -512,17 +522,6 @@
 			path = Binding;
 			sourceTree = "<group>";
 		};
-		9E8D92DB2B0CC321007955FE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9E8D92982B0CC1C9007955FE /* Custom Binding */,
-				9E8D92972B0CC1BF007955FE /* Custom ConstrolEvent */,
-				9E8D92962B0CC1A9007955FE /* Custom ControlProperty */,
-				9E8D92952B0CC1A4007955FE /* Delegate Proxy */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		9E8D92DC2B0CC331007955FE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +539,7 @@
 			children = (
 				9E8D92A22B0CC1FC007955FE /* Binding */,
 				9E8D92A12B0CC1F8007955FE /* Traits */,
+				9E3B76292BC8EF1A00C93DDC /* Extensions */,
 			);
 			path = Basic;
 			sourceTree = "<group>";

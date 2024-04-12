@@ -34,12 +34,12 @@ class CustomControlEventViewController: UIViewController {
             .disposed(by: disposeBag)
         
         textField.rx.editingDidBegin
-            .map { return UIColor.systemRed }
+            .map { UIColor.systemRed }
             .bind(to: textField.rx.borderColor)
             .disposed(by: disposeBag)
         
         textField.rx.editingDidEnd
-            .map { return UIColor.clear }
+            .map { UIColor.clear }
             .bind(to: textField.rx.borderColor)
             .disposed(by: disposeBag)
         
@@ -53,8 +53,10 @@ class CustomControlEventViewController: UIViewController {
 
 }
 
-// 커스텀 컨트롤 이벤트는 옵저버블의 역할만 수행하면서, 단순 이벤트만 방출해야 할 때 적합함.
-// 단, 이벤트로도 처리할 수 없는 복잡한 델리게이트 패턴을 구현하기 위해 델리게이트 프록시를 사용해야 함.
+/* ControlEvent 확장은 UI 이벤트 발생 시 수행해야 하는 로직을 달리 구현할 때 적합한 방법입니다.
+ * (단, 이벤트로도 처리할 수 없는 복잡한 로직은 DelegateProxy를 사용해야 합니다)
+ */
+
 extension Reactive where Base: UITextField {
     var editingDidBegin: ControlEvent<Void> {
         controlEvent(.editingDidBegin)
