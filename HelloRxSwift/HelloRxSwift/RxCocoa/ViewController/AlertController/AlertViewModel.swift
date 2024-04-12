@@ -16,7 +16,7 @@ final class AlertViewModel: ViewModelType {
     
     let disposeBag: DisposeBag = DisposeBag()
     
-    func transform(input: Input) -> Output {
+    func transform(_ input: Input) -> Output {
         return Output()
     }
     

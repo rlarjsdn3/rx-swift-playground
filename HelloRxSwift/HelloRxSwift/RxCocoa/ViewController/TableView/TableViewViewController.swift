@@ -41,7 +41,7 @@ class TableViewViewController: UIViewController {
             itemTapped: Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Product.self)),
             swipeToDelete: tableView.rx.itemDeleted.asObservable(),
             dragToMove: tableView.rx.itemMoved.asObservable())
-        let output = viewModel.transform(input: input)
+        let output = viewModel.transform(input)
         
         // 아래 items 메서드로 쉽게 데이터 모델과 테이블의 셀을 바인딩할 수 있음.
         // (단, 하나 이상의 셀이나 섹션을 테이블 뷰에 추가하려면 RxDataSource를 사용해야함)

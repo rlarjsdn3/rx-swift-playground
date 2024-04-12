@@ -46,7 +46,7 @@ class CollectionViewViewController: UIViewController {
     
     func bindViewModel() {
         let input = CollectionViewModel.Input(itemTapped: collectionView.rx.modelSelected(UIColor.self).asObservable())
-        let output = viewModel.transform(input: input)
+        let output = viewModel.transform(input)
     }
 
 }

@@ -20,7 +20,7 @@ final class CollectionViewModel: ViewModelType {
     
     let disposeBag: DisposeBag = DisposeBag()
     
-    func transform(input: Input) -> Output {
+    func transform(_ input: Input) -> Output {
         input.itemTapped
             .subscribe { print("선택된 아이템 - \($0.element?.rgbHexString ?? "-")") }
             .disposed(by: disposeBag)

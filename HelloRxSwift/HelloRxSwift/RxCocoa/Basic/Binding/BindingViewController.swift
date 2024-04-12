@@ -9,11 +9,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class BindingViewController: UIViewController {
+class BindingViewController: UIViewController, ViewControllerType {
     
+    // MARK: - Views
     @IBOutlet weak var valueField: UITextField!
     @IBOutlet weak var valueLabel: UILabel!
     
+    // MARK: - Property
+    let viewModel: BindingViewModel = BindingViewModel()
     let disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -21,22 +24,26 @@ class BindingViewController: UIViewController {
         
         valueField.placeholder = "입력"
         valueField.becomeFirstResponder()
+    
+        binding()
+    }
+    
+    /* ⭐️ Binding
+     * - Observable이 방출하는 항목을 UI에 바인딩하고자 할 때 유용한 Observer입니다.
+     * - error와 completed 항목을 전달받지 않고, 메인 쓰레드에서 실행되는 걸 보장합니다.
+     * - subscribe 메서드보다 더 간편하고 편리하게 사용할 수 있다는 장점이 있습니다.
+     */
+    
+    func binding() {
+        let input = BindingViewModel.Input(
+            text: valueField.rx.text.orEmpty.asObservable()
+        )
+        let output = viewModel.transform(input)
         
-//        valueField.rx.text
-//            .observe(on: MainScheduler.instance)
-//            .subscribe { [weak self] value in
-//                self?.valueLabel.text = value
-//            }
-//            .disposed(by: disposeBag)
-        
-        // ⭐️ Bindig 기본 이론:
-        // 옵저버블의 결과를 UI나 다른 데이터 소스에 바인딩하는 데 사용함.
-        // 매 입력 시, RxCocoa가 확장한 text 컨트롤 프로퍼티(옵저버블)가 현재 입력된 텍스트가 담긴 Next 이벤트를 방출함.
-        // subscirbe와는 다르게 에러 이벤트를 전달받지 않고, 메인 쓰레드에서 실행되는 걸 보장함.
-        valueField.rx.text
-            .bind(to: valueLabel.rx.text) // 옵저버블이 방출한 이벤트를 옵저버에게 전달함. (즉, text 컨트롤 프로퍼티가 방출한 이벤트를 text 컨트롤 프러퍼티에게 전달함)
+        output.capitalizedString
+            .distinctUntilChanged()
+            .drive(valueLabel.rx.text)
             .disposed(by: disposeBag)
-        
     }
 
 }

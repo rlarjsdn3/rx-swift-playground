@@ -26,7 +26,7 @@ final class TableViewModel: ViewModelType {
     
     let disposeBag: DisposeBag = DisposeBag()
     
-    func transform(input: Input) -> Output {
+    func transform(_ input: Input) -> Output {
         input.plusTapped
             .withUnretained(self)
             .subscribe {
