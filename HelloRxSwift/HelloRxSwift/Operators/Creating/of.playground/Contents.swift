@@ -7,7 +7,5 @@ import RxSwift
 let disposeBag = DisposeBag()
 
 Observable<Int>.of(1, 2, 3, 4, 5)
-    .subscribe {
-        print("Received Value: \($0)")
-    }
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)

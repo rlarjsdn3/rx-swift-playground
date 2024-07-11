@@ -10,7 +10,7 @@ let red = "🔴"
 let blue = "🔵"
 
 Observable<String>.generate(initialState: blue) { value in
-    value.count < 15
+    value.count < 5
 } iterate: { next in
     next.count.isMultiple(of: 2) ? next + blue : next + red
 }

@@ -21,13 +21,9 @@ let deferred = Observable.deferred {
 }
 
 deferred
-    .subscribe {
-        print("Received Value: \($0)")
-    }
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)
 
 deferred
-    .subscribe {
-        print("Received Value: \($0)")
-    }
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)

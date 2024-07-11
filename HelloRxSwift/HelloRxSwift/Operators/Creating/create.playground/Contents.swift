@@ -35,7 +35,5 @@ let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
 
 fetchPost(url: url)
     .retry(3)
-    .subscribe {
-        print("Received Value: \($0)")
-    }
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)

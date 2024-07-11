@@ -8,9 +8,7 @@ let disposeBag = DisposeBag()
 
 let numOfArray = [1, 2, 3, 4, 5]
 Observable<Int>.from(numOfArray)
-    .subscribe {
-        print("Received Value: \($0)")
-    }
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)
 
 

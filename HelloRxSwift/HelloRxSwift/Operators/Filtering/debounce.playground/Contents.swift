@@ -18,9 +18,7 @@ let bounces: [(Int, TimeInterval)] = [
 let subject = PublishSubject<Int>()
 subject
     .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
-    .subscribe {
-        print("Received Value: \($0)")
-    }
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)
 
 for bounce in bounces {

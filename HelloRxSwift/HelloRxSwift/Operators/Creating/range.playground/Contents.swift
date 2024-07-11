@@ -6,8 +6,6 @@ import RxSwift
 
 let disposeBag = DisposeBag()
 
-Observable<Int>.range(start: 1, count: 10)
-    .subscribe {
-        print("Received Value: \($0)")
-    }
+Observable<Int>.range(start: 1, count: 3)
+    .subscribe { print("Received Value: \($0)") }
     .disposed(by: disposeBag)
